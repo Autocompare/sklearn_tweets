@@ -1,5 +1,6 @@
 # sklearn_tweets
-Capture tweets based on keywords, create targets for those tweets based on sentiment analysis, then process, train and fit the tweets and sentiment scores are training date for Sci-kit learn. 
+Run sci-kit learn based machine learning trained on datasets of keyword searched tweets and their sentiment
+analysis scores in real time. 
 
 # Purpose
 Often times when experimenting with machine learning on text data in Scikit-Learn you practice by using static datasets like 20News. This can create a misinformed view on the model fitting and f1 score reports of real world, changing data. This demo is designed to capture tweets in real-time, analyze their sentiment in real-time and create a dataset of filtered tweets as the training data (X) with ranked sentiment scores as the target data (y). 
@@ -34,9 +35,9 @@ Expand your search criteria and subject to exceed the 100 tweets per search cap 
 **Scikit-Learn**
 
 Obviously sklearn fit models do dramatically beter the more data you have but this is a real world,
-real-time demo to show what happens when you don't. This demo creates pipelines and uses the Tfidf 
-vectorizer on the tweet text with tokenization and uses Multinomial Naive Bayes as the classifier.
-Those experienced in sklearn can easily add additional pipelines to check other vector / classifiers pairs.
+real-time demo to show what happens when you don't. This demo creates pipelines and vectorizes the 
+tokenized tweet text with the TfidfVectorizer and uses Multinomial Naive Bayes as the classifier.
+Those experienced in sklearn can easily add more pipelines to check other vector / classifiers pairings.
 
 	pipeline = Pipeline([
 	('vect', TfidfVectorizer(
@@ -45,6 +46,31 @@ Those experienced in sklearn can easily add additional pipelines to check other 
 				)),
 				('clf', MultinomialNB(alpha=0.2)),
 			])
+
+
+As you can see from this sample reports because of the shallowness of the dataset the entire demo runs
+very quickly in machine learning terms. The precision and f1-scores can be quite interesting
+
+		         precision    recall  f1-score   support
+
+     lowest       0.00      0.00      0.00         0
+          1       0.00      0.00      0.00         0
+          2       0.25      1.00      0.40         1
+          3       0.00      0.00      0.00         0
+          4       0.00      0.00      0.00         0
+          5       0.00      0.00      0.00         0
+          6       0.00      0.00      0.00         0
+          7       0.00      0.00      0.00         0
+          8       1.00      0.47      0.64        88
+          9       0.00      0.00      0.00         0
+    neutral       0.00      0.00      0.00         0
+         11       0.00      0.00      0.00         0
+         12       0.00      0.00      0.00         1
+         13       0.00      0.00      0.00         0
+
+	avg / total       0.98      0.47      0.63        90
+
+	[Finished in 8.1s]
 
 
 
