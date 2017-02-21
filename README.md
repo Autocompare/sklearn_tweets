@@ -48,8 +48,11 @@ Those experienced in sklearn can easily add more pipelines to check other vector
 			])
 
 
-As you can see from this sample reports because of the shallowness of the dataset the entire demo runs
-very quickly in machine learning terms. The precision and f1-scores can be quite interesting
+As you can see from this sample reports the precision and f1-score can yield interesting
+results with shallow data. The target data has 20 labels ranging from extremely low sentiment
+to extremely high sentiment. It's unlikely without nth thousands of tweets to see recall at every label.
+Because of this the classification report will throw label warnings.
+
 
 		         precision    recall  f1-score   support
 
