@@ -3,7 +3,7 @@ Run sci-kit learn based machine learning trained on datasets of keyword searched
 analysis scores in real time. 
 
 # Purpose
-Often times when experimenting with machine learning on text data in Scikit-Learn you practice by using static datasets like 20News. This can create a misinformed view on the model fitting and f1 score reports of real world, changing data. This demo is designed to capture tweets in real-time, analyze their sentiment in real-time and create a dataset of filtered tweets as the training data (X) with ranked sentiment scores as the target data (y). 
+Often times when experimenting with machine learning on text data in Scikit-Learn you practice by using static datasets like 20Newsgroup. This can create a misinformed view on model fitting and f1 score reports of real world, constantly changing data. This demo is designed to capture tweets in real-time, analyze their sentiment in real-time and create a dataset of filtered tweets as the training data (X) with ranked sentiment scores as the target data (y). The demo also makes and measures predictions on the fit model of X,y.
 
 
 **Results**
@@ -48,9 +48,9 @@ Those experienced in sklearn can easily add more pipelines to check other vector
 			])
 
 
-As you can see from this sample reports the precision and f1-score can yield interesting
+As you can see from this sample report the precision and f1-score can yield interesting
 results with shallow data. The target data has 20 labels ranging from extremely low sentiment
-to extremely high sentiment. It's unlikely without nth thousands of tweets to see recall at every label.
+to extremely high sentiment. It's unlikely without several thousand tweets to see support at every label.
 Because of this the classification report will throw label warnings.
 
 
@@ -75,6 +75,17 @@ Because of this the classification report will throw label warnings.
 
 	[Finished in 8.1s]
 
+
+**Vader Sentiment**
+
+For sentiment analysis we are using the interesting Valence Aware Dictionary and sEntiment Reasoner
+module for python created by [@cjhutto](https://github.com/cjhutto/vaderSentiment). Each tweet
+iterated through sentiment analysis and enumerated to create the labeled target data.
+
+		def process_scores():
+		raw_scores = [sent_analyze(tweet) for tweet in some_array]
+		enumarated_scores = [enumerate_score(score) for score in raw_scores]
+		return enumarated_scores
 
 
 
