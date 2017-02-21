@@ -6,15 +6,19 @@ Often times when experimenting with machine learning on text data in Scikit-Lear
 
 
 **Results**
+
 You should be able to get report charts like this that change as the new twitter data is captured.
 <img src=http://i.imgur.com/Rt85Gcg.png>
 
 # Modules
 **Install the requirements with pip**
+
 	pip install -r /path/to/requirements.txt
 
 **Twitter**
+
 Make sure you have a twitter account and enter the O Auth credentials
+
 	OAUTH_TOKEN =  "enter your token in" 
 	OAUTH_TOKEN_SECRET = "enter your token secret in"
 	CONSUMER_KEY = "enter your consumer key"
