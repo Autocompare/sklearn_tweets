@@ -4,4 +4,4 @@ Capture tweets based on keywords, create targets for those tweets based on senti
 # Purpose
 Often times when experimenting with machine learning on text data in Scikit-Learn you practice by using static datasets like 20News. This can create a misinformed view on the model fitting and f1 score reports of real world, changing data. This demo is designed to capture tweets in real-time, analyze their sentiment in real-time and create a dataset of filtered tweets as the training data (X) with ranked sentiment scores as the target data (y). 
 
-	<img src=http://i.imgur.com/Rt85Gcg.png>
+<img src=http://i.imgur.com/Rt85Gcg.png>
