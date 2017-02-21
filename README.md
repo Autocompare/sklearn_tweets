@@ -8,6 +8,8 @@ Often times when experimenting with machine learning on text data in Scikit-Lear
 **Results**
 
 You should be able to get report charts like this that change as the new twitter data is captured.
+
+
 <img src=http://i.imgur.com/Rt85Gcg.png>
 
 # Modules
@@ -17,9 +19,35 @@ You should be able to get report charts like this that change as the new twitter
 
 **Twitter**
 
-Make sure you have a twitter account and enter the O Auth credentials
+Make sure you have a twitter account and enter your O Auth credentials in get_tweets.py
 
-	OAUTH_TOKEN =  "enter your token in" 
-	OAUTH_TOKEN_SECRET = "enter your token secret in"
+	OAUTH_TOKEN =  "enter your token" 
+	OAUTH_TOKEN_SECRET = "enter your token secret"
 	CONSUMER_KEY = "enter your consumer key"
 	CONSUMER_SECRET = "enter your consumer secret"
+
+Expand your search criteria and subject to exceed the 100 tweets per search cap of the API.
+
+	tweets = process_tweets('Trump','Merkel','Brexit')
+
+
+**Scikit-Learn**
+
+Obviously sklearn fit models do dramatically beter the more data you have but this is a real world,
+real-time demo to show what happens when you don't. This demo creates pipelines and uses the Tfidf 
+vectorizer on the tweet text with tokenization and uses Multinomial Naive Bayes as the classifier.
+Those experienced in sklearn can easily add additional pipelines to check other vector / classifiers pairs.
+
+	pipeline = Pipeline([
+	('vect', TfidfVectorizer(
+				stop_words,
+				token_pattern=ur"\b[a-z0-9_\-\.]+[a-z][a-z0-9_\-\.]+\b",
+				)),
+				('clf', MultinomialNB(alpha=0.2)),
+			])
+
+
+
+
+
+
