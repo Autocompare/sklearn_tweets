@@ -34,10 +34,10 @@ Expand your search criteria and subject to exceed the 100 tweets per search cap 
 
 **Scikit-Learn**
 
-Obviously sklearn fit models do dramatically beter the more data you have but this is a real world,
+Obviously sklearn fit models do dramatically better the more data you have but this is a real world,
 real-time demo to show what happens when you don't. This demo creates pipelines and vectorizes the 
 tokenized tweet text with the TfidfVectorizer and uses Multinomial Naive Bayes as the classifier.
-Those experienced in sklearn can easily add more pipelines to check other vector / classifiers pairings.
+Those experienced in sklearn can easily add more pipelines to check other vector / classifier pairings.
 
 	pipeline = Pipeline([
 	('vect', TfidfVectorizer(
@@ -79,7 +79,7 @@ Because of this the classification report will throw label warnings.
 **Vader Sentiment**
 
 For sentiment analysis we are using the interesting Valence Aware Dictionary and sEntiment Reasoner
-module for python created by [@cjhutto](https://github.com/cjhutto/vaderSentiment). Each tweet
+module for python created by [@cjhutto](https://github.com/cjhutto/vaderSentiment). Each tweet is
 iterated through sentiment analysis and enumerated to create the labeled target data.
 
 		def process_scores():
